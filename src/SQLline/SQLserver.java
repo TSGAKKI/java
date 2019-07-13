@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 public class SQLserver {
 	
 	String url="jdbc:sqlserver://localhost:1433;DatabaseName=test";
@@ -76,10 +78,10 @@ public class SQLserver {
 			if(rs.next()==true) {
 				loginModel.setLoginSuccess(true);
 				System.out.println("Ñ°ÕÒ³É¹¦");
-				//JOptionPane.showMessageDialog(null, "µÇÂ½³É¹¦","¹§Ï²",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "µÇÂ½³É¹¦","¹§Ï²",JOptionPane.WARNING_MESSAGE);
 			}else {
 				loginModel.setLoginSuccess(false);
-				//JOptionPane.showMessageDialog(null, "µÇÂ½Ê§°Ü","ÖØÐÂµÇÂ½",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "µÇÂ½Ê§°Ü","ÖØÐÂµÇÂ½",JOptionPane.WARNING_MESSAGE);
 			}
 			con.close();
 		} catch (SQLException e) {}

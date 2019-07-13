@@ -59,6 +59,9 @@ import java.sql.*;
          this.setVisible(true);
          this.setTitle("µÇÂ½");
      }
+     public boolean isLoginSuccess() {
+    	 return loginSuccess;
+     }
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -70,8 +73,12 @@ import java.sql.*;
 		System.out.println(log.getPassWord());
 		SQLserver sqls=new SQLserver();
 		log=sqls.Verify(log);
-		System.out.println("");
+		System.out.println("gdf");
 		loginSuccess=log.getLoginSuccess();
+		if(loginSuccess==true) {
+			this.dispose();
+			new Reservation();
+		}
 	}   
  }
   

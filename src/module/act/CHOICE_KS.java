@@ -33,6 +33,8 @@ public CHOICE_KS() {
 //	panel.add(jb1);
 //	panel.add(jb2);
 //	
+	br.br.SetBR_KSMC(CHOICE_WORD[0]);
+	br.br.SetBR_YSMC(CHOICE_WORD[1]);
 	jb1.addActionListener(this);
 	jb2.addActionListener(jb);
 	
@@ -50,12 +52,13 @@ public JComboBox getjb2_KS() {
 	 return jb2;
  }
 
-public String[] getCHOICE_WORD() {
-	return CHOICE_WORD;
+public SEND_BRIF getCHOICE_IF() {
+	System.out.println(CHOICE_WORD[0]);
+	br.SetIf("¡ı¿⁄", "001",CHOICE_WORD[0] , CHOICE_WORD[1]);//∫Û–Ë–ﬁ∏ƒ
+	return br;
 }
 void init() {
-	SEND_KS sendinfo_KS=new SEND_KS();
-	 br=new SEND_BRIF();  
+	SEND_KS sendinfo_KS=new SEND_KS();  
 	CHOICE_WORD=new String[2]; 
 	
 	 
@@ -128,10 +131,12 @@ class send_jb2 implements ActionListener{
 		// TODO Auto-generated method stub
 		JComboBox temp = (JComboBox) e.getSource();
 		String tp = (String) temp.getSelectedItem();
-		br.br.SetBR_YSMC(tp);
-		CHOICE_WORD[1]=tp;
 		
+		CHOICE_WORD[1]=tp;
+		br.br.SetBR_YSMC(tp);
 	}
+	
+	
 	
 }
 }

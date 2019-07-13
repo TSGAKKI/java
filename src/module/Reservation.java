@@ -29,9 +29,10 @@ public class Reservation extends JFrame{
 		 System.out.println();
 		 init();
 	
-		 button.addActionListener(BR);
+		 
 		 panel.add(jb1);
 		 panel.add(jb2);
+		 button.addActionListener(KS.getCHOICE_IF());
 		this.getContentPane().add(panel);
 		this.setBounds(100, 100, 300, 300);
 		this.setDefaultCloseOperation(3);
@@ -44,8 +45,8 @@ public class Reservation extends JFrame{
 //		KSMC=KS.getCHOICE_WORD()[0];
 //		YSMC=KS.getCHOICE_WORD()[1];
 		 button=new JButton("‘§‘º");	 
-		// BR.getIf("¡ı¿⁄", "001", KSMC, YSMC);
-		 button.addActionListener(BR);
+		
+		
 		 KS= new CHOICE_KS();
 		 panel=new JPanel();
 		 jb1= KS.getjb1_KS();

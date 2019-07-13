@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import Data.BR_IFNO;
 import SQLline.SQLserver;
 
@@ -15,12 +17,12 @@ SQLserver sql=new SQLserver();
 Connection con=sql.getCon();
 
 
-//	public	void SetIf( String NAME,String BYBH,String KSMC,String YSMC) {
-//		br.SetBR_NAME(NAME);
-//		br.SetBR_BYBH(BYBH);
-//		br.SetBR_KSMC(KSMC);
-//		br.SetBR_YSMC(YSMC);
-//	}
+	public	void SetIf( String NAME,String BYBH,String KSMC,String YSMC) {
+		br.SetBR_NAME(NAME);
+		br.SetBR_BYBH(BYBH);
+		br.SetBR_KSMC(KSMC);
+		br.SetBR_YSMC(YSMC);
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -38,12 +40,17 @@ Connection con=sql.getCon();
         stmt.setString(2, br.getBR_BYBH());
         stmt.setString(3, br.getBR_KSMC());
         stmt.setString(4, br.getBR_YSMC());
+//        stmt.setString(1,"刘磊");
+//        stmt.setString(2, "001");
+//        stmt.setString(3, "神经科");
+//        stmt.setString(4, "刘XX");
         
         stmt.executeUpdate();
         //关闭会话对象
         stmt.close();
         //关闭连接对象
         con.close();
+        JOptionPane.showMessageDialog(null, "预约成功","恭喜",JOptionPane.WARNING_MESSAGE);
     }catch(SQLException ex) {
         ex.printStackTrace();
         System.out.println("失败");
