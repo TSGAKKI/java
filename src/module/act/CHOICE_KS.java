@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import Data.KS;
 import module.act.Data.SEND_BRIF;
 import module.act.Data.SEND_KS;
-public class CHOICE_KS extends JFrame implements ActionListener {
+public class CHOICE_KS implements ActionListener {
 	 
 	
 	 
@@ -22,28 +22,46 @@ JComboBox jb1 ;
 JComboBox jb2 ;
 JButton button;
 JPanel panel ;
-String[] CHOICE_WORD;
-send_jb2 jb;
+ String[] CHOICE_WORD;
+ SEND_BRIF br=new SEND_BRIF(); 
+ 
+send_jb2 jb=new send_jb2();;
+
 public CHOICE_KS() {
-	init();
-	panel.add(jb1);
-	panel.add(jb2);
 	
+	init();
+//	panel.add(jb1);
+//	panel.add(jb2);
+//	
 	jb1.addActionListener(this);
 	jb2.addActionListener(jb);
-	this.getContentPane().add(panel);
-	this.setBounds(100, 100, 300, 300);
-	this.setDefaultCloseOperation(3);
-	this.setVisible(true);
+	
+//	this.getContentPane().add(panel);
+//	this.setBounds(100, 100, 300, 300);
+//	this.setDefaultCloseOperation(3);
+//	this.setVisible(true);
 }
 
+ public JComboBox getjb1_KS() {
+	 return jb1;
+ }
+
+public JComboBox getjb2_KS() {
+	 return jb2;
+ }
+
+public String[] getCHOICE_WORD() {
+	return CHOICE_WORD;
+}
 void init() {
-	jb=new send_jb2();
 	SEND_KS sendinfo_KS=new SEND_KS();
-	SEND_BRIF br=new SEND_BRIF();  
+	 br=new SEND_BRIF();  
 	CHOICE_WORD=new String[2]; 
 	
+	 
+	 
 	 KS[] ksinfo=sendinfo_KS.getksinfo();
+	 
 	s=new String[ksinfo.length];
 	ss=new String[ksinfo.length][];
 	String[] tmp;
@@ -65,10 +83,10 @@ void init() {
 			}
 		}
 	}
-	
 	jb1 = new JComboBox(s);
 	 jb2 = new JComboBox();
 	 panel = new JPanel();
+	
 }
 
 public void actionPerformed(ActionEvent e) {
@@ -94,10 +112,14 @@ public void actionPerformed(ActionEvent e) {
 			jb2.addItem(ss[2][i]);
 		}
 	}
+	
 	CHOICE_WORD[0]=name;
+	br.br.SetBR_KSMC(name);
 	System.out.println(CHOICE_WORD[0]);
 	}
-}
+
+
+
 class send_jb2 implements ActionListener{
 	
 	String tp;
@@ -106,7 +128,10 @@ class send_jb2 implements ActionListener{
 		// TODO Auto-generated method stub
 		JComboBox temp = (JComboBox) e.getSource();
 		String tp = (String) temp.getSelectedItem();
-		System.out.println(tp);
+		br.br.SetBR_YSMC(tp);
+		CHOICE_WORD[1]=tp;
+		
 	}
 	
+}
 }

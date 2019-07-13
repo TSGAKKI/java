@@ -75,11 +75,11 @@ void send() {
    {
    for (int j = 0; j < ksinfo.length; j++) {
 		KS_RName.setString(1, ksinfo[j].getKSBH());
-		rs1=KS_RName.executeQuery();
+		rs1=KS_RName.executeQuery();//科室对应的医生
 		ArrayList<String> tmp=new ArrayList<String>();
 		while(rs1.next()) {
 			tmp.add(rs1.getString("Name"));
-			System.out.println(rs1.getString("Name"));
+			//System.out.println(rs1.getString("Name"));
 		}
 		save_data.add(tmp);
    }

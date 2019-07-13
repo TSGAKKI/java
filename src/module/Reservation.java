@@ -1,36 +1,55 @@
 package module;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import module.act.CHOICE_KS;
-import module.act.send_jb2;
+import module.act.*;
+import module.act.Data.SEND_BRIF;
 
-public class Reservation{
-	 public Reservation() {
-		// TODO Auto-generated constructor stub
-	new CHOICE_KS();
-	
-	String s[];
-	String ss[][];
+
+public class Reservation extends JFrame{
+	CHOICE_KS KS;
+	JButton button;
+	JPanel panel;
 	JComboBox jb1 ;
 	JComboBox jb2 ;
-	JButton button;
-	JPanel panel ;
+	SEND_BRIF BR;
+	String KSMC;
+	String YSMC;
 	
+
 	
-		init();
-		panel.add(jb1);
-		panel.add(jb2);
-		
-		jb1.addActionListener(this);
-		jb2.addActionListener(jb);
+	 
+	 public Reservation() {
+		// TODO Auto-generated constructor stub
+		 System.out.println();
+		 init();
+	
+		 button.addActionListener(BR);
+		 panel.add(jb1);
+		 panel.add(jb2);
 		this.getContentPane().add(panel);
 		this.setBounds(100, 100, 300, 300);
 		this.setDefaultCloseOperation(3);
-		this.setVisible(true);
-	
-	
+		this.setVisible(true);	
+		add(button,BorderLayout.SOUTH);
+	 }
+	 
+	 void init() {
+		 
+//		KSMC=KS.getCHOICE_WORD()[0];
+//		YSMC=KS.getCHOICE_WORD()[1];
+		 button=new JButton("‘§‘º");	 
+		// BR.getIf("¡ı¿⁄", "001", KSMC, YSMC);
+		 button.addActionListener(BR);
+		 KS= new CHOICE_KS();
+		 panel=new JPanel();
+		 jb1= KS.getjb1_KS();
+		 jb2=KS.getjb2_KS();
+		
 	 }
  }

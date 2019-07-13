@@ -10,16 +10,17 @@ import Data.BR_IFNO;
 import SQLline.SQLserver;
 
 public class SEND_BRIF implements ActionListener{
-BR_IFNO br=new BR_IFNO();
+public BR_IFNO br=new BR_IFNO();
 SQLserver sql=new SQLserver();
 Connection con=sql.getCon();
 
-	void getIf( String NAME,String BYBH,String KSMC,String YSMC) {
-		br.SetBR_NAME(NAME);
-		br.SetBR_BYBH(BYBH);
-		br.SetBR_KSMC(KSMC);
-		br.SetBR_YSMC(YSMC);
-	}
+
+//	public	void SetIf( String NAME,String BYBH,String KSMC,String YSMC) {
+//		br.SetBR_NAME(NAME);
+//		br.SetBR_BYBH(BYBH);
+//		br.SetBR_KSMC(KSMC);
+//		br.SetBR_YSMC(YSMC);
+//	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
