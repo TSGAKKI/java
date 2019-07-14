@@ -17,9 +17,9 @@ SQLserver sql=new SQLserver();
 Connection con=sql.getCon();
 
 
-	public	void SetIf( String NAME,String BYBH,String KSMC,String YSMC) {
+	public	void SetIf( String NAME,String KSMC,String YSMC) {
 		br.SetBR_NAME(NAME);
-		br.SetBR_BYBH(BYBH);
+//		br.SetBR_BYBH(BYBH);
 		br.SetBR_KSMC(KSMC);
 		br.SetBR_YSMC(YSMC);
 	}
@@ -32,28 +32,17 @@ Connection con=sql.getCon();
 		//在连接对象的基础上创建会话对象
         PreparedStatement stmt;
         //写插入数据的SQL语句
-        String sql = "insert into T_BRIF values(?,?,?,?)";
+        String sql = "insert into T_BRIF values(?,?,?)";
         
-        stmt=con.prepareStatement(sql);
-     
+        stmt=con.prepareStatement(sql);     
         stmt.setString(1,br.getBR_NAME());
-        stmt.setString(2, br.getBR_BYBH());
-        stmt.setString(3, br.getBR_KSMC());
-        stmt.setString(4, br.getBR_YSMC());
-//        stmt.setString(1,"刘磊");
-//        stmt.setString(2, "001");
-//        stmt.setString(3, "神经科");
-//        stmt.setString(4, "刘XX");
-        
+        stmt.setString(2, br.getBR_KSMC());
+        stmt.setString(3, br.getBR_YSMC());       
         stmt.executeUpdate();
-        //关闭会话对象
-        stmt.close();
-        //关闭连接对象
-        con.close();
         JOptionPane.showMessageDialog(null, "预约成功","恭喜",JOptionPane.WARNING_MESSAGE);
     }catch(SQLException ex) {
-        ex.printStackTrace();
-        System.out.println("失败");
+        
+    	JOptionPane.showMessageDialog(null, "重复!预约失败","错误",JOptionPane.WARNING_MESSAGE);
         }
 	}
 }

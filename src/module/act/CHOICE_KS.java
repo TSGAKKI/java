@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import Data.KS;
+import SQLline.SQLserver;
 import module.act.Data.SEND_BRIF;
 import module.act.Data.SEND_KS;
 public class CHOICE_KS implements ActionListener {
@@ -24,24 +25,19 @@ JButton button;
 JPanel panel ;
  String[] CHOICE_WORD;
  SEND_BRIF br=new SEND_BRIF(); 
- 
+ SQLserver sql;
 send_jb2 jb=new send_jb2();;
 
 public CHOICE_KS() {
 	
 	init();
-//	panel.add(jb1);
-//	panel.add(jb2);
-//	
+
 	br.br.SetBR_KSMC(CHOICE_WORD[0]);
 	br.br.SetBR_YSMC(CHOICE_WORD[1]);
 	jb1.addActionListener(this);
 	jb2.addActionListener(jb);
 	
-//	this.getContentPane().add(panel);
-//	this.setBounds(100, 100, 300, 300);
-//	this.setDefaultCloseOperation(3);
-//	this.setVisible(true);
+
 }
 
  public JComboBox getjb1_KS() {
@@ -53,8 +49,8 @@ public JComboBox getjb2_KS() {
  }
 
 public SEND_BRIF getCHOICE_IF() {
-	System.out.println(CHOICE_WORD[0]);
-	br.SetIf("刘磊", "001",CHOICE_WORD[0] , CHOICE_WORD[1]);//后需修改
+	
+	br.SetIf(sql.br.getNAME(),CHOICE_WORD[0] , CHOICE_WORD[1]);//后需修改
 	return br;
 }
 void init() {
@@ -70,7 +66,7 @@ void init() {
 	String[] tmp;
 	
 	{for(int i=0;i<s.length;i++) {
-		System.out.println(ksinfo[i].getKSMC());
+		
 		s[i]=ksinfo[i].getKSMC();
 	}
 	}
@@ -118,7 +114,7 @@ public void actionPerformed(ActionEvent e) {
 	
 	CHOICE_WORD[0]=name;
 	br.br.SetBR_KSMC(name);
-	System.out.println(CHOICE_WORD[0]);
+	
 	}
 
 

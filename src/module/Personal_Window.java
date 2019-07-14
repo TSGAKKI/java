@@ -2,6 +2,8 @@ package module;
 
 import javax.swing.JFrame;
 
+import module.view.actview.PersonalView;
+
 public class Personal_Window extends JFrame{
 	PersonalView pv;
 	public Personal_Window() {
