@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import SQLline.Loginuser;
 import SQLline.SQLserver;
+import module.MainView;
 import module.RegisterAndLoginView;
 import module.Reservation;
 import module.login;
@@ -15,7 +16,7 @@ public class testr {
 //		SEND_KS t= new SEND_KS();
 //		ArrayList<ArrayList<String>> save_data= t.get_DOC();
 //		System.out.println(save_data.get(2).get(0));
-		new RegisterAndLoginView();
+		new MainView();
 	}
 
 }

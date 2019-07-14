@@ -15,8 +15,9 @@ public class RegisterAndLoginView extends JPanel {
 		logview=new login();
 		setLayout(new BorderLayout());
 		p=new JTabbedPane();
-		p.add("µÇÂ½", logview);
 		p.add("×¢²á",registerView);
+		p.add("µÇÂ½", logview);
+		
 		p.validate();
 		add(p,BorderLayout.CENTER);
 	}

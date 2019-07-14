@@ -21,14 +21,10 @@ public class Reservation extends JFrame{
 	String KSMC;
 	String YSMC;
 	
-
-	
-	 
 	 public Reservation() {
 		// TODO Auto-generated constructor stub
 		 System.out.println();
 		 init();
-	
 		 
 		 panel.add(jb1);
 		 panel.add(jb2);
