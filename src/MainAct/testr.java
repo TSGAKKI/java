@@ -5,10 +5,10 @@ import SQLline.Loginuser;
 import SQLline.SQLserver;
 import module.MainView;
 import module.Personal_Window;
+import module.RegisterAndLoginView;
+import module.Reservation;
+import module.login;
 import module.act.Data.SEND_KS;
-import module.view.RegisterAndLoginView;
-import module.view.actview.Reservation;
-import module.view.actview.login;
 import test.ts;
 public class testr {
 

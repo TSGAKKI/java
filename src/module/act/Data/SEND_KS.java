@@ -51,10 +51,10 @@ void send() {
    
    //执行插入数据的SQL语句，返回受影响的行数
    ResultSet rs1 = stmt.executeQuery(sql);
-  
+   //ResultSet rs2 =KS_RName.executeQuery(select_Name);
    
    int column=0;
-   
+   //System.out.println(column);
    while(rs1.next()) {
    	column++;
    }
@@ -65,10 +65,12 @@ void send() {
  int i=0;
    
    while(rs1.next()) {
+   	// System.out.println(rs1.getString("KSBH"));
    	ksinfo[i].setKSBH(rs1.getString("KSBH"));
    	ksinfo[i].setKSMC(rs1.getString("KSMC"));
    	ksinfo[i].setPYZS(rs1.getString("PYZS"));
-
+   	System.out.println(i);
+   	i++;
    }
    {
    for (int j = 0; j < ksinfo.length; j++) {
@@ -77,7 +79,7 @@ void send() {
 		ArrayList<String> tmp=new ArrayList<String>();
 		while(rs1.next()) {
 			tmp.add(rs1.getString("Name"));
-			
+			//System.out.println(rs1.getString("Name"));
 		}
 		save_data.add(tmp);
    }
@@ -88,9 +90,11 @@ void send() {
    stmt.close();
    //关闭连接对象
    con.close();
-  
+ 
+   
 }catch(SQLException ex) {
    ex.printStackTrace();
+   System.out.println("失败");
    }
 	}
 }

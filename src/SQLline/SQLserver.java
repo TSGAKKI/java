@@ -42,22 +42,45 @@ public class SQLserver {
 		String id=loginModel.getID();
 		String pw=loginModel.getPassWord();
 		String sqlStr="select id,password from T_LOGIN where "+"id = ? and password = ?";
-
+//				try {
+//	        //在连接对象的基础上创建会话对象
+//	        Statement stmt = con.createStatement();
+//	        //写插入数据的SQL语句
+//	        String sql = "insert into T_LOGIN values('252','123')";
+//	        //执行插入数据的SQL语句，返回受影响的行数
+//	        int rs1 = stmt.executeUpdate(sql);
+//	        //关闭会话对象
+//	        stmt.close();
+//	        //关闭连接对象
+//	        con.close();
+//	      
+//	        if(rs1>0) {
+//	            System.out.println("插入成功");
+//	        }
+//	        else {
+//	            System.out.println("插入失败");
+//	        }
+//	    }catch(SQLException ex) {
+//	        ex.printStackTrace();
+//	        System.out.println("失败");
+//	        }
 		try {
 			presql=con.prepareStatement(sqlStr);
+			
+			System.out.println("寻找成功1");
 			presql.setString(1, id);
 			presql.setString(2, pw);
+			System.out.println("寻找成功");
 			try{
 				rs=presql.executeQuery();
 			}catch(Exception exx) {
 				exx.printStackTrace();
 			}
-			
+			System.out.println("寻找成功2");
 			if(rs.next()==true) {
 				loginModel.setLoginSuccess(true);
-				
+				System.out.println("寻找成功");
 				br.setNAME(id);
-				
 				JOptionPane.showMessageDialog(null, "登陆成功","恭喜",JOptionPane.WARNING_MESSAGE);
 			}else {
 				loginModel.setLoginSuccess(false);

@@ -7,10 +7,10 @@ public class Research_BRIF extends JFrame {
 	
 	public Research_BRIF() {
 		// TODO Auto-generated constructor stub
-		{for(int i=1 ; i<ReservationIF.br.size();i++) {
+		{for(int i=0 ; i<ReservationIF.br.size();i++) {
 			
-//		System.out.print(ReservationIF.br.get(i).getBR_KSMC());
-//		System.out.println(ReservationIF.br.get(i).getBR_YSMC());
+		System.out.print(ReservationIF.br.get(i).getBR_KSMC());
+		System.out.println(ReservationIF.br.get(i).getBR_YSMC());
 		}	
 		}
 	}

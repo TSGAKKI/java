@@ -7,9 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import module.view.RegisterAndLoginView;
-import module.view.actview.Reservation;
-
 public class MainView extends JFrame implements ActionListener{
 	RegisterAndLoginView view; 
 	JButton button;
