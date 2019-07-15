@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -15,13 +16,15 @@ import Data.BR_IFNO;
 import SQLline.SQLserver;
 import javafx.application.Application;
 import module.Research_BRIF;
-import module.view.ListDemo;
 
 public class ReservationIF implements ActionListener {
  SQLserver sqll;
  Connection con;
  PreparedStatement sta;
 ResultSet rs;
+ResultSet rs1;
+public static String [] ColumnName;
+public static String [][] record;
 public static ArrayList<BR_IFNO> br;
 BR_IFNO tmp;
  	public ReservationIF() {
@@ -40,12 +43,33 @@ BR_IFNO tmp;
 			
 	        String sql = "select BR_KSMC,BR_YSMC from T_BRIF "+" where BR_NAME = ?";
 	       
-	        sta=con.prepareStatement(sql);
+	        sta=con.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 	         sta.setString(1, SQLserver.br.getNAME());
 	        
-	        rs=sta.executeQuery(); 
+	         rs=sta.executeQuery(); 
+	        
+	        
+	        ResultSetMetaData metaData=rs.getMetaData();
+	        int columnCount=metaData.getColumnCount();
+	        ColumnName=new String[columnCount];
+	        System.out.println("huode");
+	        for (int i = 0; i < ColumnName.length; i++) {
+	        	ColumnName[i]=metaData.getColumnName(i+1);
+	        	System.out.println(ColumnName[i]);
+			}
+	        rs.last();
+	        record=new String [rs.getRow()][columnCount];
+	        System.out.println(rs.getRow());
+	        int i=0;
+	        rs.beforeFirst();
 	        
 	        while(rs.next()) {
+	        	for(int j=0;j<columnCount;j++) {
+	        		record[i][j]=rs.getString(j+1);
+	        		System.out.println(record[i][j]);
+	        	}
+	        	i++;
+	        	
 	        	tmp=new BR_IFNO(); 
 	        	tmp.SetBR_KSMC(rs.getString(1));
 	        	tmp.SetBR_YSMC(rs.getString(2));	        	
@@ -55,6 +79,7 @@ BR_IFNO tmp;
 	    }catch(SQLException ex) {
 	      ex.getStackTrace();
 	        }
+		
 		new Research_BRIF();
 	}
  	

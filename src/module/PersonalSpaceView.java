@@ -9,7 +9,7 @@ import SQLline.SQLserver;
 import javafx.scene.control.Button;
 //import module.act.Data.ReservationIF;
 import module.act.Data.ReservationIF;
-import module.view.ListDemo;
+
 
 
 
@@ -18,7 +18,7 @@ JButton button_Re;
 JButton button_Pi;
 JButton button_Se;
 SQLserver sql;
-ListDemo lis;
+
 
 Box boxV;
 public PersonalSpaceView() {
@@ -26,7 +26,7 @@ public PersonalSpaceView() {
 	boxV= Box.createVerticalBox();
 	
 	
-	lis=new ListDemo();
+	
 	button_Re=new JButton("预约记录");
 	button_Se=new JButton("账户安全");
 	button_Re.addActionListener(Re_IF);

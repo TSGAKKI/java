@@ -13,13 +13,14 @@ public class RegisterData {
 	PreparedStatement preSql;
 	
 	public void writeRegister(Register register ) {
-		String sqlStr="insert into T_LOGIN value (?,?,?)";
+		String sqlStr="insert into T_LOGIN values (?,?,?)";
 		int ok=0;
 		try {
 			preSql=con.prepareStatement(sqlStr);
 			preSql.setString(1, register.getID());
-			preSql.setString(2, register.getPassWord());
 			preSql.setString(3, register.getBRBH());
+			preSql.setString(2, register.getPassWord());
+
 			ok=preSql.executeUpdate();
 			con.close();		
 		}catch(Exception e) {
