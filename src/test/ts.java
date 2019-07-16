@@ -39,7 +39,7 @@ public static void main(String[]args){
 public void actionPerformed(ActionEvent e) {
 	int i=jBox.getSelectedIndex()+1;
 	String s=(String)jBox.getSelectedItem();
-	System.out.println("你选中的是第"+i+"项"+",内容是:"+s);
+	
 	// 把i插入你数据库中对应的属性字段
 	
 }

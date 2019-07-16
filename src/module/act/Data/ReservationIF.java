@@ -52,7 +52,7 @@ BR_IFNO tmp;
 	        ResultSetMetaData metaData=rs.getMetaData();
 	        int columnCount=metaData.getColumnCount();
 	        ColumnName=new String[columnCount];
-	        System.out.println("huode");
+	        
 	        for (int i = 0; i < ColumnName.length; i++) {
 	        	ColumnName[i]=metaData.getColumnName(i+1);
 	        	

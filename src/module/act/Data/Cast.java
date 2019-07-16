@@ -48,10 +48,10 @@ public class Cast  implements ActionListener{
 		        ResultSetMetaData metaData=rs.getMetaData();
 		        int columnCount=metaData.getColumnCount();
 		        ColumnName=new String[columnCount];
-		        System.out.println("huode");
+		        
 		        for (int i = 0; i < ColumnName.length; i++) {
 		        	ColumnName[i]=metaData.getColumnName(i+1);
-		        	System.out.println(ColumnName[i]);
+		        	
 				}
 		        rs.last();
 		        record=new String [rs.getRow()][columnCount];

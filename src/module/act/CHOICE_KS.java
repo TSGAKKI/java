@@ -65,7 +65,7 @@ void init() {
 	String[] tmp;
 	
 	{for(int i=0;i<s.length;i++) {
-		System.out.println(ksinfo[i].getKSMC());
+		
 		s[i]=ksinfo[i].getKSMC();
 	}
 	}
@@ -113,7 +113,7 @@ public void actionPerformed(ActionEvent e) {
 	
 	CHOICE_WORD[0]=name;
 	br.br.SetBR_KSMC(name);
-	System.out.println(CHOICE_WORD[0]);
+	
 	}
 
 
