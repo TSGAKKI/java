@@ -48,7 +48,7 @@ public class Research_BRIF extends JFrame implements ActionListener{
 		
 		
 		add(boxV,BorderLayout.CENTER);
-	//System.out.println(ReservationIF.br.get(0).getBR_KSMC());
+	
 		setBounds(12, 100, 400, 200);
 	
 	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -59,11 +59,12 @@ public class Research_BRIF extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-//		JTable jt= (JTable)e.getSource();
+
 		int Column=table.getSelectedRow();
 		if(Column==-1) {
 			JOptionPane.showMessageDialog(null, "«Î—°‘Ò“ª––","!",JOptionPane.WARNING_MESSAGE);
 		}else {
+			
 		KSMC=ReservationIF.record[Column][0];
 		YSMC=ReservationIF.record[Column][1];
 		del.Delete(KSMC, YSMC);

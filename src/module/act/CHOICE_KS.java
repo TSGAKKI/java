@@ -30,18 +30,13 @@ send_jb2 jb=new send_jb2();;
 public CHOICE_KS() {
 	
 	init();
-//	panel.add(jb1);
-//	panel.add(jb2);
-//	
+
 	br.br.SetBR_KSMC(CHOICE_WORD[0]);
 	br.br.SetBR_YSMC(CHOICE_WORD[1]);
 	jb1.addActionListener(this);
 	jb2.addActionListener(jb);
 	
-//	this.getContentPane().add(panel);
-//	this.setBounds(100, 100, 300, 300);
-//	this.setDefaultCloseOperation(3);
-//	this.setVisible(true);
+
 }
 
  public JComboBox getjb1_KS() {
@@ -135,8 +130,5 @@ class send_jb2 implements ActionListener{
 		CHOICE_WORD[1]=tp;
 		br.br.SetBR_YSMC(tp);
 	}
-	
-	
-	
 }
 }

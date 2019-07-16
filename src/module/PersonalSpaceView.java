@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import SQLline.SQLserver;
 import javafx.scene.control.Button;
+import module.act.Data.Cast;
 //import module.act.Data.ReservationIF;
 import module.act.Data.ReservationIF;
 
@@ -28,8 +29,9 @@ public PersonalSpaceView() {
 	
 	
 	button_Re=new JButton("预约记录");
-	button_Se=new JButton("账户安全");
+	button_Se=new JButton("缴费统计");
 	button_Re.addActionListener(Re_IF);
+	button_Se.addActionListener(new Cast());
 	boxV.add(new JLabel("用户ID: "+sql.br.getNAME()));
 	boxV.add(boxV.createVerticalStrut(10));
 	boxV.add(button_Re);

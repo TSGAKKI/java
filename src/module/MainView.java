@@ -17,6 +17,7 @@ public class MainView extends JFrame implements ActionListener{
 		button.addActionListener(this);
 		add(view,BorderLayout.CENTER);
 		add(button,BorderLayout.SOUTH);
+		setTitle("ึ๗าณ");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setVisible(true);
 		

@@ -55,18 +55,17 @@ BR_IFNO tmp;
 	        System.out.println("huode");
 	        for (int i = 0; i < ColumnName.length; i++) {
 	        	ColumnName[i]=metaData.getColumnName(i+1);
-	        	System.out.println(ColumnName[i]);
+	        	
 			}
 	        rs.last();
 	        record=new String [rs.getRow()][columnCount];
-	        System.out.println(rs.getRow());
+	       
 	        int i=0;
 	        rs.beforeFirst();
 	        
 	        while(rs.next()) {
 	        	for(int j=0;j<columnCount;j++) {
 	        		record[i][j]=rs.getString(j+1);
-	        		System.out.println(record[i][j]);
 	        	}
 	        	i++;
 	        	

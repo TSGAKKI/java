@@ -69,7 +69,7 @@ void send() {
    	ksinfo[i].setKSBH(rs1.getString("KSBH"));
    	ksinfo[i].setKSMC(rs1.getString("KSMC"));
    	ksinfo[i].setPYZS(rs1.getString("PYZS"));
-   	System.out.println(i);
+   	
    	i++;
    }
    {
@@ -79,7 +79,7 @@ void send() {
 		ArrayList<String> tmp=new ArrayList<String>();
 		while(rs1.next()) {
 			tmp.add(rs1.getString("Name"));
-			//System.out.println(rs1.getString("Name"));
+			
 		}
 		save_data.add(tmp);
    }
@@ -94,7 +94,7 @@ void send() {
    
 }catch(SQLException ex) {
    ex.printStackTrace();
-   System.out.println("Ê§°Ü");
+ 
    }
 	}
 }
