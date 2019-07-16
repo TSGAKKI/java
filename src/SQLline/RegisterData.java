@@ -18,9 +18,9 @@ public class RegisterData {
 		try {
 			preSql=con.prepareStatement(sqlStr);
 			preSql.setString(1, register.getID());
-			preSql.setString(3, register.getBRBH());
-			preSql.setString(2, register.getPassWord());
-
+			preSql.setString(2, register.getBRBH());
+			preSql.setString(3, register.getPassWord());
+//System.out.println(register.getID(), register.getBRBH(),register.getPassWord());
 			ok=preSql.executeUpdate();
 			con.close();		
 		}catch(Exception e) {

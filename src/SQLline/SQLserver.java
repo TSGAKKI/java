@@ -67,16 +67,16 @@ public class SQLserver {
 		try {
 			presql=con.prepareStatement(sqlStr);
 			
-			System.out.println("寻找成功1");
+			
 			presql.setString(1, id);
 			presql.setString(2, pw);
-			System.out.println("寻找成功");
+			
 			try{
 				rs=presql.executeQuery();
 			}catch(Exception exx) {
 				exx.printStackTrace();
 			}
-			System.out.println("寻找成功2");
+			
 			if(rs.next()==true) {
 				loginModel.setLoginSuccess(true);
 				System.out.println("寻找成功");
